@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(0>x){
+            //음수의 경우 회신해도 값이 같지 않다.
+            return false;
+        }else if((Integer.MAX_VALUE<x)||(Integer.MIN_VALUE>x)){
+            //run time Error 발생 제거, 정수형 최대 최소 사이의 값만 사용 가능
+            return false;
+        }
+        int y = x;
+        int res = 0;
+        while(y!=0){
+            res=(res*10)+(y%10);
+            y/=10;                    
+        }
+        if(x==res){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
