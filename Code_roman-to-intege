@@ -1,0 +1,45 @@
+class Solution {
+    public int romanToInt(String s) {
+        String[] roman = s.split("");
+        //Map을 사용해서 로마숫자 넣어주기
+		    HashMap<String,Integer> map = new HashMap<String,Integer>();    
+            
+		    map.put("I",1);
+		    map.put("V",5);
+		    map.put("X",10);
+		    map.put("L",50);
+		    map.put("C",100);
+		    map.put("D",500);
+		    map.put("M",1000);
+		    
+		    int sum = 0;
+        //split한 만큼 loop실행
+		    for(int i=0;i<roman.length;i++){
+          
+          //I,C,X의 경우에만 실행
+		    	if(roman[i].equals("I")||roman[i].equals("C")||roman[i].equals("X")) {
+		    	  
+		    		if(i<roman.length-1&&map.get(roman[i])>=map.get(roman[i+1])) {
+		    			//list bound가 넘어가지 않기 위해 최대length-1만큼만 확인하며 앞의 숫자가 뒤의 숫자가 클때는 똑같이 +
+              
+              sum += map.get(roman[i]);
+		    		
+            }else if(i<roman.length-1&&map.get(roman[i])<=map.get(roman[i+1])) {
+		    			
+              //list bound가 넘어가지 않기 위해 최대length-1만큼만 확인하며 앞의 숫자가 뒤의 숫자보다 작을 때는 -해서 값 넣어기
+		    			
+              sum += map.get(roman[i+1]) - map.get(roman[i]);
+		    			i++;
+		    		}else {
+              
+              //마지막 List값의 경우 무조건+를 해준다
+		    			sum += map.get(roman[i]);
+		    		}
+		    	}else {
+          //I,C,X의 경우가 아닌 경우 -가 없으므로 +만 실행
+		    		sum += map.get(roman[i]);
+		    	}	
+		    }
+		    return sum;
+    }
+}
