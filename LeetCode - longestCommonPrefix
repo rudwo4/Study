@@ -1,0 +1,24 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+    	
+        String strSum ="";
+        //배열이 없을 경우
+        if(strs.length==0) return strSum;
+    	
+        //비교 할 데이터 0번데이터 선택
+        strSum = strs[0];
+        for(int i=1;i<strs.length;i++){    
+            //비교 대상 데이터 i로 각각 선택
+            String Prefix = strs[i];
+            
+            //비교값이 0번에 있으면 0을 반환, 아닐경우 -1 반환
+            while(Prefix.indexOf(strSum) !=0){
+                //비교값이 없을 경우 substring하여 indexOf에 0을 반환할 때까지 반복함
+                strSum = strSum.substring(0,strSum.length()-1);
+            }
+        }
+        //0을 반환하면 값을 return 함
+        return strSum;
+    }
+    
+}
