@@ -2,7 +2,9 @@ class Solution {
     public int removeDuplicates(int[] nums) {
     //nums의 하나하나씩 중복되어있는지 값 확인
     int result = 1;
-    for(int i=1;i<nums.length;i++){ 
+    for(int i=1;i<nums.length;i++){
+      //배열의 앞뒤로 값이 같은 경우 넘어감
+      //값이 갖지 않을 경우 순서대로 맞지않은 값을 넣어 중복제거
       if(nums[i-1]!=nums[i]){
       	nums[result] = nums[i];
         result++;
