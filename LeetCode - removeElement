@@ -1,0 +1,23 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        //Map을 사용하여 Key value Integer로 정함
+        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+        int cnt =0;
+        
+        //nums 전체를 for문으로 하나하나 확인
+        for(int i=0;i<nums.length;i++){
+            //val변수가 nums배열 값과 맞지 않을 경우에만 map 에 넣고 넣을 때마다cnt 변수에 1씩 증가 
+            if(val != nums[i]){
+                map.put(cnt,nums[i]);
+                cnt++;
+            }
+        }
+        
+        //cnt 수량 만큼 nums배열에 다시 값을 맨 앞부터 넣어준다
+        for(int j=0;j<cnt;j++){
+            nums[j] = map.get(j);
+        }
+      //cnt만큼 nums를 뽑으면 중복된거 제외한 나머지 값들만 뽑을 수 있음  
+      return cnt;
+    }
+}
