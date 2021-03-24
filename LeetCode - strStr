@@ -1,0 +1,15 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        //haystack과 needle이 같으면 0을 반환
+        if(haystack.equals(needle)){
+            return 0;
+        //haystack에 needle 값이 포함되어 있으면 haystack 값 안의 needle의 인덱스 위치를 반환    
+        }else if(haystack.contains(needle)){
+            return haystack.indexOf(needle);
+            
+        //haystack과 needle 값이 같지도 않고 포함도 되어있지 않을 경우 -1 반환    
+        }else{
+            return -1;
+        }
+    }
+}
