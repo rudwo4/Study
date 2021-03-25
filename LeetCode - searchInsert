@@ -1,0 +1,16 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int cnt=0;
+        
+        //nums를 돌면서 타겟이랑 맞는 경우 해당 위치 return
+        for(int i=0;i<nums.length;i++){
+            if(nums[i] == target){
+                return i;
+        //맞지 않을경우 타겟보다 작은 숫자인 만큼 자릿수를 Cnt로 추가해서 Cnt 반환        
+            }else if(nums[i]<target){
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+}
