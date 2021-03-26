@@ -1,0 +1,12 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int sum = nums[0];
+
+        for(int i=1;i<nums.length;i++){
+            //Math.max(a,b) a와 b 값중 더 큰 값을 반환한다.
+            nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
+            sum = Math.max(sum,nums[i]);
+        }
+      return sum;  
+    }
+}
