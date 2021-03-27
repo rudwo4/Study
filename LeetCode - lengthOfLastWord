@@ -1,0 +1,24 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+    
+    String arr[];
+    Boolean hasVal = false;
+    
+    //문자열 확인하며 문자열이 전체가 공백이 아닐 경우만 true
+    for(int i=0;i<s.length();i++){
+    	if(s.charAt(i)!=' '){
+        	hasVal=true;
+        }
+    }
+    
+    //문자열이 전체 공백일 경우 0 반환
+    if(hasVal==false){
+        return 0;
+    }else{
+    //문자열에 값이 있을 경우 " "으로 나누기
+    	arr = s.split(" ");
+          //맨 마지막 문자열의 길이 반환 (split의 경우 0부터 시작하므로 맨마지막 숫자 -1 필요)
+    	    return arr[arr.length-1].length();
+        }
+    }
+}
