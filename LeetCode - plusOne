@@ -1,0 +1,20 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+      int n = digits.length;        
+        
+        for (int i = n - 1; i >= 0; i--) {
+            digits[i]++;
+            // 10미만의 경우 +1 한 값 그대로 반환 
+            if (digits[i] < 10) {
+                return digits;
+            }
+            // 아닐경우 첫번째는 0 반환
+            digits[i] = 0;
+        }
+        // 그 앞의 자리는 + 1 추가해서 반환
+        int[] result = new int[n + 1];
+        result[0] = 1;
+
+        return result;
+    }
+}
