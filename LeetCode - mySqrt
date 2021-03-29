@@ -1,0 +1,10 @@
+class Solution {
+    public int mySqrt(int x) {
+    
+        //double 형으로 x에대한제곱근을 가져온다.
+       double result = Math.sqrt(x);
+       
+       //정수형으로 형변환 해야하기 때문에 앞에 (int)를 붙여준다
+       return (int) result; 
+    }
+}
