@@ -1,0 +1,22 @@
+class Solution {
+    public int climbStairs(int n) {
+        //n 값이 3이하일 경우의 n값을 반환
+        if(n<3){
+            return n;
+        }
+        
+        //n 값이 3이상일 경우 
+        int[] result = new int[n+1];
+        result[0] = 0;
+        result[1] = 1;
+        result[2] = 2;
+        
+        //3의 경우의 수는 2 + 1 = 총 3개
+        //4의 경우의 수는 3 + 2 = 총 4개
+        //즉 해당 결과 값 패턴을 확인 해보니 n값의 경우의 수는 (n-1) + (n-2) 임을 알수 있다.
+        for(int i=3;i<=n;i++){
+            result[i] = result[i-1] + result[i-2];
+        }
+       return result[n]; 
+    }
+}
