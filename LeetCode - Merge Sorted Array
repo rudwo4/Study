@@ -1,0 +1,12 @@
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        //m은 nums1배열에서 값이 있음
+        for(int i=m;i<nums1.length;i++){
+            //m-i 나머지 m값 이후 뒷자리에 값을 넣음
+            nums1[i] = nums2[i-m];
+        }
+        //Arrays.sort 함수 (정렬)
+        Arrays.sort(nums1);
+    }
+}
