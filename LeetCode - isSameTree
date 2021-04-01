@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        //p와 q가 둘 다 null일 경우 false
+        if(p==null && q==null) {
+  	        return true;
+        }
+        //p와 q가 둘 중 하나가 null일 경우 false
+        if(p==null || q==null) {
+  	        return false;
+        }
+        
+        //p와 q가 값이 맞지않으면 false
+        if(p.val != q.val) {
+  	        return false;
+        }
+
+          // 왼쪽 노드, 오른쪽 노드의 결과 논리곱 
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+}
