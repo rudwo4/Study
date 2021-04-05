@@ -1,0 +1,17 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int lowPrice = prices[0];
+        int result=0;
+        for(int i=1;i<prices.length;i++){
+            //저점 매수지점 찾기
+            lowPrice = Math.min(lowPrice,prices[i]);
+            //현재 가격 - 저점이 1보다 클 경우 매도
+            if(prices[i]-lowPrice > 0){
+                result += prices[i]-lowPrice;
+                //다음 저점을 매도한 날 숫자로 설정
+                lowPrice = prices[i]; 
+            }
+        }
+      return result;
+    }
+}
