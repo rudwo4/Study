@@ -1,0 +1,19 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        //특수문자 제거 정규식 및 lowercase로 맞춰주기
+        String originalS = s.replaceAll("[^\\w]","").toLowerCase();
+        originalS = originalS.replace("_","");
+        
+        //수정한 값 reverse 하기
+        StringBuffer reverseS = new StringBuffer(originalS);
+        String reuslt = reverseS.reverse().toString();
+
+        //reuslt 와 originalS 값 비교
+        if(reuslt.equals(originalS)){
+            return true;
+            
+        }else{
+            return false;
+        }
+    }
+}
