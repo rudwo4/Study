@@ -1,0 +1,19 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        
+        //배열 정렬
+        Arrays.sort(nums);
+        
+        //배열이 하나일 경우 1개 반환 또는 맨 앞의  0번과 1번이 다를 경우
+        if(nums.length == 1 || nums[0] != nums[1]) return nums[0];
+        
+        //현재의 숫자가 앞뒤로 같지 않을 때 해당 숫자는 중복이 되지 않은 숫자
+        for(int i=1;i<nums.length-1;i++){
+            if((nums[i] != nums[i-1])&&(nums[i] != nums[i+1])){
+                return nums[i];
+            }
+        }
+        //IF문에서 체크를 못했을 경우 맨뒤의 숫자가 겹치지 않은 숫자이므로 전체자리수 -1
+        return nums[nums.length-1];
+    }
+}
