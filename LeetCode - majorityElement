@@ -1,0 +1,23 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+  		int oneVal = nums[0];
+        int cnt = 0;
+        for(int i=0;i<nums.length;i++){
+            if(oneVal ==nums[i]){
+                //0번자리의 값과 같은 것의 갯수 확인
+                cnt++;
+            }else{
+                //0번가 자리수가 같지않을 경우 -1해주고
+                cnt--;
+                //cnt가 0이되면
+                if(cnt==0){
+                    //기준이되는 값은 현재 기준에서 + 1한 값으로 바뀐다
+                    oneVal = nums[i+1];
+                    //다시 cnt 재정의
+                    cnt = 0;
+                }
+            }
+        }
+        return oneVal;
+    }
+}
