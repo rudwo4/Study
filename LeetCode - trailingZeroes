@@ -1,0 +1,13 @@
+class Solution {
+    public int trailingZeroes(int n) {
+        int sum=0;
+        //n값을 나눴을 때 0보다 클때까지 돌림
+        while( n > 0 ){
+            //팩토리얼 기준 나누기 5를 했을 때 0의 갯수 를 알수 
+            n = n/5;
+            sum += n;
+        }
+        //System.out.println(sum);
+        return sum;
+    }
+}
