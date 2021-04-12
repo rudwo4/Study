@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+select Person.FirstName,Person.LastName,Address.City,Address.State
+//person 테이블에 각 주소가 있는지 확인 해야 하므로 leftJOIN 실시
+From Person LEFT JOIN Address
+ON Person.PersonId = Address.PersonId;
