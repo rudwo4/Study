@@ -1,0 +1,6 @@
+# Write your MySQL query statement below
+//최대값 (salary)를 구하라
+SELECT MAX(Salary) as SecondHighestSalary 
+from Employee 
+//(Employee에서 최고값으로 제외 하는 값) 은 포함 되지 않는다 
+where Salary NOT IN(SELECT MAX(Salary) FROM Employee);
