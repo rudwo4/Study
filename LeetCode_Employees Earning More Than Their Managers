@@ -1,0 +1,14 @@
+# Write your MySQL query statement below
+//inner join을 통해 self 조인 실시
+
+//특정 이름을 찾는다
+SELECT E.Name as Employee
+
+//같은 테이블의 같은 컬럼 끼리 inner join을 하여 겹치는 값을 찾는다. 
+FROM Employee E INNER JOIN Employee M
+
+// managerId와 Id가 같은 것
+ON E.ManagerId = M.Id
+
+//조건 E.ManagerId의 salary > M.Id의 Salary
+WHERE E.Salary > M.Salary
