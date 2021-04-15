@@ -1,0 +1,6 @@
+select Email
+from Person
+//group by 절을 사용 하여 Email에 특정 조건을 넣어준다
+group by Email
+//group by 했을 경우에는 Where 가 아닌 Having 을 사용해서 Email컬럼에 갯수가 1개 이상인경우 - 중복갯수가 있는경우
+Having count(Email) > 1
