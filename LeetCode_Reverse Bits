@@ -1,0 +1,7 @@
+public class Solution {
+    // you need treat n as an unsigned value
+    public int reverseBits(int n) {
+        //거꾸로 나온 n 값을 reverse 해서 반환
+        return Integer.reverse(n);
+    }
+}
