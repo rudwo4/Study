@@ -1,0 +1,16 @@
+class Solution {
+    public String[] findOcurrences(String text, String first, String second) {
+        ArrayList<String> li = new ArrayList<String>();
+        
+        String []splitText =text.split(" ");
+        //Array에 Split한 값 담기
+        for(int i=0;i<splitText.length-2;i++){
+            if((splitText[i].equals(first))&&(splitText[i+1].equals(second))){
+                li.add(splitText[i+2]);                
+            }
+        }
+        String[] result = new String[li.size()];
+        
+        return li.toArray(result);
+    }
+}
