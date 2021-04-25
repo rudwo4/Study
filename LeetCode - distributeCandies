@@ -1,0 +1,14 @@
+class Solution {
+    public int distributeCandies(int[] candyType) {
+        int result = candyType.length / 2; 
+        //Hashset은 객체를 저장하기 전에 먼저 객체의 hashCode()메소드를 호출해서 해시 코드를 얻어낸 다음 
+        //저장되어 있는 객체들의 해시 코드와 비교한 뒤 같은 해시 코드가 있다면 다시 equals() 메소드로 
+        //두 객체를 비교해서 true가 나오면 동일한 객체로 판단하고 중복 저장을 하지 않습니다
+        Set<Integer> set = new HashSet();
+        for(int i=0;i<candyType.length;i++){
+            set.add(candyType[i]);
+        }
+        //result값과 set.size() 중 값이 더 작은 값을 return한다
+        return Math.min(result,set.size());
+    }
+}
