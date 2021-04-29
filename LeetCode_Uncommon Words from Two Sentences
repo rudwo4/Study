@@ -1,0 +1,39 @@
+class Solution {
+    public String[] uncommonFromSentences(String A, String B) {
+        String []Aresult=A.split(" ");
+        String []Bresult=B.split(" ");
+        
+        Map<String,Integer> map = new HashMap<String,Integer>();
+    
+        for(int i=0;i<Aresult.length;i++){
+            if(map.containsKey(Aresult[i])){
+                map.put(Aresult[i],map.get(Aresult[i])+1);
+            }else{
+                map.put(Aresult[i],1);
+            }
+        }
+        
+        for(int j=0;j<Bresult.length;j++){
+            if(map.containsKey(Bresult[j])){
+                map.put(Bresult[j],map.get(Bresult[j])+1);
+            }else{
+                map.put(Bresult[j],1);
+            }
+        }
+        
+        Set<String> set = new HashSet<String>();
+        for(String s : map.keySet()){
+            if(map.get(s) >1){
+                continue;
+            }
+            set.add(s);
+        }
+        String []result = new String[set.size()];
+        int cnt = 0;
+        
+        for(String s: set){
+            result[cnt++] = s;
+        }
+        return result;  
+    }
+}
