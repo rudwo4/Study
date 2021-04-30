@@ -1,0 +1,15 @@
+class Solution {
+    public int numJewelsInStones(String jewels, String stones) {
+        String []J = jewels.split("");
+        String []S = stones.split("");
+        int result = 0;
+        for(int i=0;i<J.length;i++){
+            for(int j=0;j<S.length;j++){
+                if(J[i].equals(S[j])){
+                    result++;
+                }
+            }
+        }
+        return result;
+    }
+}
