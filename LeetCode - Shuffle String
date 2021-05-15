@@ -1,0 +1,16 @@
+class Solution {
+    public String restoreString(String s, int[] indices) {
+        String[] SplitS = s.split("");
+        String result="";
+        HashMap<Integer,String> map = new HashMap<Integer,String>();
+        
+        for(int i=0;i<indices.length;i++){
+          map.put(indices[i],SplitS[i]);    
+        }
+        
+        for(int j=0;j<map.size();j++){
+            result = result+map.get(j);
+        }
+        return result;
+    }
+}
