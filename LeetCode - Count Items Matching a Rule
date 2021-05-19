@@ -1,0 +1,23 @@
+class Solution {
+    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
+        int val = 0;
+        int cnt = 0;
+        switch(ruleKey){
+                case "type": val=0;
+                    break;
+                case "color": val=1;
+                    break;
+                case "name": val=2;
+                    break;
+        }
+        
+        for(int i=0;i<items.size();i++){
+            
+            if(ruleValue.equals(items.get(i).get(val))){
+
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+}
