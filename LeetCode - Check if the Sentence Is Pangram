@@ -1,0 +1,23 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        
+    boolean flag = false;
+    ArrayList<Character> list = new ArrayList<>();
+ 
+    if(sentence.length() < 26) return flag;
+    else {
+ 
+      for(int i=0; i<sentence.length(); i++) {
+ 
+        if(!list.contains(sentence.charAt(i))) {
+        	list.add(sentence.charAt(i));
+        }
+      }
+ 
+      if(list.size() == 26) flag=true;
+ 
+    }
+ 
+    return flag;
+    }
+}
