@@ -1,0 +1,22 @@
+class Solution {
+    public int maxDepth(String s) {
+        int cnt = 0;
+        int result = 0;
+        String []Split = s.split("");
+        List<Integer> li = new ArrayList<Integer>();
+        
+        for(int i=0;i<Split.length;i++){
+            if(Split[i].equals("(")){
+                cnt++;
+            }else if(Split[i].equals(")")){
+                li.add(cnt);
+                cnt--;
+            }
+        }
+        
+        for(int j=0;j<li.size();j++){
+            result = Math.max(li.get(j),result);
+        }
+        return result;
+    }
+}
