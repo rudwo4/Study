@@ -1,0 +1,18 @@
+class Solution {
+    public String sortSentence(String s) {
+        String []sp = s.split(" ");
+        String result="";
+        Map<Integer,String> map = new HashMap<Integer,String>();
+        
+        for(int i=0;i<sp.length;i++){
+            int key = Integer.parseInt(sp[i].replaceAll("[^0-9]",""));
+            String value = sp[i].replaceAll("[0-9]","");
+            map.put(key,value);
+        }
+        
+        for(int j=1;j<=map.size();j++){
+            result += map.get(j)+" ";
+        }
+        return result.trim();
+    }
+}
