@@ -1,0 +1,23 @@
+class Solution {
+    public int maximum69Number (int num) {
+        String strNum = String.valueOf(num);
+        int []arr_num = new int[strNum.length()];
+        int result =0;
+        boolean chk = true; //최대 수를 나타내기 위해 제일 첫번째 자리만 숫자 바꿔주기 위해
+        for(int i=0;i<strNum.length();i++){
+            arr_num[i]= num%10;
+            num/=10;
+        }
+        for(int j=arr_num.length-1;j>=0;j--){
+            if(arr_num[j]==6 && chk){
+                arr_num[j]=9;
+                chk = false;
+            }
+            result += arr_num[j];
+            if(j > 0) {
+        		result *= 10;
+        	}
+        }
+        return result;
+    }
+}
